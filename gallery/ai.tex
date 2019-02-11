@@ -1,0 +1,76 @@
+\input{headers}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+%\frametitle{\textbf{AI as scientific literature assistant}}
+%------------------------------------------------------------
+%\begin{textblock}{20}(0,37) 
+%\includegraphics[width=\textwidth]{gallery/UserImage}
+%\end{textblock}
+%------------------------------------------------------------
+\begin{textblock}{100}(2,2) 
+\begin{tikzpicture}%[transform canvas={scale=1.0}]
+\draw[step=0.5cm,gray,very thin,opacity=0.0] (-6,-4) grid (9.5,4.5);
+
+\node at (-5,0)(user)
+{\includegraphics[trim={0.5cm 0cm 0.5cm 0cm},clip,width=0.18\textwidth]{UserImage}};
+
+\node[circle,draw, ultra thick, fill=red!20,minimum size=1.5cm] at (-2,0)(AI)
+{\Huge AI};
+
+
+\node at (1.2,2.5)(engine)
+{\includegraphics[width=0.4\textwidth]{inspire_logo_hep}};
+
+\node[block,fill=blue!5,scale=0.7,diamond] at (1,0)(update){\bf updated?};
+
+
+\node[block,ultra thick,fill=red!20,text width=2cm] at (4.5,0)(read)
+{\bf \small NLP on scientific literature};
+
+
+
+\node[block,fill=green!30,text width=1.8cm,minimum height=.1cm] at (7.5,3)(plots)
+{\bf \small graph extraction};
+
+\node[block,fill=green!30,text width=1.2cm,minimum height=.1cm] at (7.5,1)(tables)
+{\bf \small table reader};
+
+\node[block,fill=green!30,text width=1.8cm,minimum height=.1cm] at (7.6,-1)(equations)
+{\bf \small equation interpreter};
+
+\node[block,fill=green!30,text width=2.5cm,minimum height=.1cm] at (8,-3)(statements)
+{\bf \small statements querier};
+
+
+\node[block,ultra thick, fill=yellow,text width=3cm] at (1.0,-2.5)(hub)
+{\bf \small universal data hub};
+
+
+\draw [line,dashed, ultra thick] (-4,0.5) -- (-3,0.5) node [midway,above] {\bf query };
+\draw [line,dashed, ultra thick] (-3,-0.5) -- (-4,-0.5) node [midway,below] {\bf reply };
+
+\draw [line,dashed, ultra thick] (update) -- (1,2) node [midway,left]{\bf no};
+\draw [line,dashed, ultra thick] (update) -- (hub) node [midway,left]{\bf yes};
+\draw [line,dashed, ultra thick] (engine) -- (4.5,2.5) -- (read);
+\draw [line,dashed, ultra thick] (AI)    -- (update)     ;
+\draw [line,dashed, ultra thick] (plots)     -- (read)   ;
+\draw [line,dashed, ultra thick] (tables)    -- (read)   ;
+\draw [line,dashed, ultra thick] (equations) -- (read)   ;
+\draw [line,dashed, ultra thick] (statements)-- (read)   ;
+\draw [line,dashed, ultra thick] (read)--(4.5,-2.5)--(hub)   ;
+\draw [line,dashed, ultra thick] (hub)--(-2,-2.5)--(AI);
+
+
+\end{tikzpicture}
+
+\end{textblock}
+%------------------------------------------------------------
+\end{frame}
+
+
+\end{document}
+
